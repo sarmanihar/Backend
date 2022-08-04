@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{%for obj in object_list%}
+<form action="" method="POST">
+    {% csrf_token %}
+    question:{{obj.Question}}
+    ans: 
+    <select name="ans" >
+        <option value="free">{{obj.Answer1}}</option>
+        <option value="starter" >{{obj.Answer2}}</option>
+        <option value="professional">{{obj.Answer3}}</option>
+        <option value="corporate">{{obj.Answer4}}</option>
+    </select>
+        <br>
+        <input type="submit" value="Post"/>
+    </form>
+
+{%endfor%}
+
+
+    <a href="marks.html">
+        <h1>Check your mark</h1>
+    </a>
+    
+</html>
+{% endblock%}

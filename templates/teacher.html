@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    Set Question: 
+    <textarea cols="35" rows="8" name="Question">
+    </textarea>
+        <br>
+
+    Option1: <br/>
+    <textarea cols="25" rows="1" name="Answer1">
+    </textarea><br/>
+    Option2: <br/>
+    <textarea cols="25" rows="1" name="Answer2">
+    </textarea><br/>
+    Option3: <br/>
+    <textarea cols="25" rows="1" name="Answer3">
+    </textarea><br/>
+    Option4: <br/>
+    <textarea cols="25" rows="1" name="Answer4">
+    </textarea><br/>
+    Answer: <br/>
+    <textarea cols="25" rows="1" name="S_Answer">
+    </textarea><br/>
+    <input type="submit" value="Post"/>
+</form>
+{% endblock%}
