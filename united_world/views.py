@@ -41,17 +41,38 @@ def student(request):
         return render(request,'student.html',context)
         
 def marks(request):
-    queryset1=Post.objects.get(id=2)
-    queryset2=Room.objects.get(id=11)
+    queryset1=Post.objects.all()
+    queryset2=Room.objects.all()
+    i1=queryset1.count()
+    i2=queryset2.count()
+    i3=5
+    i4=12
+    mark=0
+    marks=0
+
+    i1=i3+i1-1+4
+    i2=i4+i2-1     
     queryset3=0
     queryset4=0
-    if(queryset1.ans == queryset2.S_Answer):
-       queryset3=queryset3+4
-       queryset4=queryset3+23
+    while i3<=i1 and i4<=i2:
+        
+        queryset3=Post.objects.get(id=i3)
+        queryset4=Room.objects.get(id=i4)
+        print(queryset3.ans)
+        print(queryset4.S_Answer)
+        marks=marks+1   
+        if(queryset3.ans == queryset4.S_Answer):
+            mark=mark+1
+        if(i3 == 7):
+           i3=11
+        i3=i3+1
+        i4=i4+1    
     context={
     'object_list1':queryset1,
     'object_list2':queryset2,
     'counter1':queryset3,
-    'counter2':queryset4
+    'counter2':queryset4,
+    'mark':mark,
+    'marks':marks
     }
     return render(request,'marks.html',context)
