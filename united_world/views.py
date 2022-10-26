@@ -45,12 +45,12 @@ def marks(request):
     queryset2=Room.objects.all()
     i1=queryset1.count()
     i2=queryset2.count()
-    i3=5
-    i4=12
+    i3=19
+    i4=23
     mark=0
     marks=0
 
-    i1=i3+i1-1+4
+    i1=i3+i1-1
     i2=i4+i2-1     
     queryset3=0
     queryset4=0
@@ -61,10 +61,8 @@ def marks(request):
         print(queryset3.ans)
         print(queryset4.S_Answer)
         marks=marks+1   
-        if(queryset3.ans == queryset4.S_Answer):
+        if(str(queryset3.ans) == str(queryset4.S_Answer)):
             mark=mark+1
-        if(i3 == 7):
-           i3=11
         i3=i3+1
         i4=i4+1    
     context={
