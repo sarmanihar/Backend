@@ -1,0 +1,185 @@
+* {
+    margin: 0px;
+}
+
+.navbar a:hover {
+    color: blue;
+}
+
+.navbar h2 {
+    float: right;
+}
+
+.navbar h1 {
+    color: aquamarine;
+    text-align: center;
+}
+
+.hi-nav {
+    padding: 30px;
+}
+
+.navbar {
+    background-color: #37474f;
+    word-spacing: 1em;
+    /*color: aliceblue;*/
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: aqua;
+}
+
+#na {
+    list-style: None;
+}
+
+.Container {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.h {
+    min-height: 275px;
+}
+
+.abcd {
+    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 2px black dotted;
+    background-color: #37474f;
+    width: 300px;
+}
+
+.vjk {
+    color: aqua;
+}
+
+.moto {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+
+/*.mot {
+    float: left;
+    width: 33.3%;
+    box-sizing: border-box;
+}
+*/
+
+#m1 {
+    width: 50%;
+    border: 2px blueviolet dotted;
+    border-radius: 60px;
+}
+
+#m2 {
+    width: 53%;
+    border: 2px blueviolet dotted;
+    border-radius: 60px;
+}
+
+#m3 {
+    width: 56%;
+    border: 2px blueviolet dotted;
+    border-radius: 60px;
+}
+
+.mot {
+    text-align: center;
+    float: left;
+    width: 33.3%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+
+/*
+<nav class="navbar">
+      <div class="hi-nav">
+        <h1>WH@P</h1>
+        {% if abcd == 1 %}
+        <ul>
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/signup1/">Sign-up</a>
+          </li>
+
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/login/">Log-in</a>
+          </li>
+        </ul>
+        {% else %}
+
+        <h2>Welcome {{abcd}}</h2>
+        {% if fgh == 1 %}
+        <ul>
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/showseller1/">make your objects</a>
+          </li>
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/showseller2/"
+              >write their amounts,price etc..</a
+            >
+          </li>
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/showseller3/">chek your orders</a>
+          </li>
+        </ul>
+        {% else %}
+        <ul>
+          <li id="na" class="nav-item">
+            <h3><a href="http://127.0.0.1:8000/showbuyer1/">ORDER</a></h3>
+          </li>
+        </ul>
+        {% endif %} {% endif %}
+      </div>
+    </nav>
+    
+    
+    
+    .navbar a:hover {
+    color: blue;
+}
+
+.navbar h2 {
+    float: right;
+}
+
+.navbar h1 {
+    color: aquamarine;
+    text-align: center;
+}
+
+.hi-nav {
+    padding: 30px;
+}
+
+.navbar {
+    background-color: #37474f;
+    word-spacing: 1em;
+
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: aqua;
+}
+
+#na {
+    list-style: None;
+}*/

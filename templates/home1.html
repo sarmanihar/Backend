@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+   
+    <!DOCTYPE html>
+    <html>
+    
+    <head>
+        <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+        <title>find_lyrics</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link href="static/css/home1.css" type="text/css" rel="stylesheet">
+        
+    </head>
+    
+    <body>
+        <h3>Liked songs</h3>
+        <ul>
+            {%for obj in object_list%}
+
+            <li>
+                {{obj.song_name}} by {{obj.artist_name}}
+            </li>
+
+            {%endfor%}
+        </ul>
+        
+        <nav class="navbar navbar-expand-lg bg-dark text-white">
+            <div class="container">
+                <div class="d-flex">
+    
+                    <!-- <img id="sp" src="images/spotifylogo.jpeg" alt="Spotify Logo" class="img-fluid">-->
+                    <h1>Find Lyrics Of Searched Song</h1>
+                </div>
+                <!--<div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#" class="nav-link" style="color:white">Premium</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" style="color:white">Support</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" style="color:white">Download</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" style="color:white">
+                                <p>|</p>
+                            </a></li>
+                        'sign up and log in'
+                        <li id="na" class="nav-item"><a href="#" class="nav-link" style="color:white">Sign up</a></li>
+                        <li id="na" class="nav-item"><a href="#" class="nav-link" style="color:white">Log in</a></li>
+                    </ul>
+                </div>-->
+                <div class="collapse navbar-collapse">
+                    
+
+
+
+
+                </div>
+            </div>
+        </nav> 
+        <br>
+        <br>
+        <h2></h2>
+      
+        <section id="fg" class="text-center text-primary">
+            <form  id="post-form">
+                {% csrf_token %}
+                <h1><input placeholder="Write name of song" id="song_name" name="song_name"></h1>
+                <h1><input placeholder="Write name of artist" id="artist_name" name="artist_name"></h1>
+               <!-- <button id="btn">get your lyrics</button>-->
+                <br>
+                <br>
+                <p>Like the song</p>
+                <button type="submit" ><i class="bi-hand-thumbs-up text-primary mx-1"></i></button>
+            </form>
+        </section>
+        <button id="btn">get your lyrics</button>
+        <div class="row" id="weather"></div>
+      
+
+        <!--<h1>create form</h1>
+        <h2></h2>
+        <form id="post-form">
+            {% csrf_token %}
+            <p>name:</p>
+            <input type="text" id="name" name="name"/>
+            <p>email:</p>
+            <input type="text" id="email" name="email"/>
+            <p>bio:</p>
+            <input type="text" id="bio" name="bio"/>
+            <br>
+            <br>
+            <button type="submit" ><i class="bi-hand-thumbs-up text-primary mx-1"></i></button>
+        </form>-->
+       <!-- <div class="row" style="text-align: center;">
+            <form action="">
+                <input type="search" id="search" placeholder="Search by city name">
+            </form>
+        </div>
+        <div class="row" id="weather"></div>-->
+        <script src="static/js/home1.js"></script>
+    </body>
+    <script type="text/javascript">
+        $(document).on('submit','#post-form',function(e){
+            e.preventDefault();
+            $.ajax({
+                type:'POST',
+
+                url:'/create',
+                data:{
+                    song_name:$('#song_name').val(),
+                    artist_name:$('#artist_name').val(),
+                    csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                },
+                
+
+                success:function (data){
+                        $('h2').html(data);
+                }
+            });
+        });
+    </script>
+    </html>
+
+{% endblock%}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/css/home2.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="hi-nav">
+        <h1>WH@P</h1>
+        {% if abcd == 1 %}
+        <ul>
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/signup1/">Sign-up</a>
+          </li>
+
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/login/">Log-in</a>
+          </li>
+        </ul>
+        {% else %}
+
+        <h2>Welcome {{abcd}}</h2>
+        {% if fgh == 1 %}
+        <ul>
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/showseller1/">make your objects</a>
+          </li>
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/showseller2/"
+              >write their amounts,price etc..</a
+            >
+          </li>
+          <li id="na" class="nav-item">
+            <a href="http://127.0.0.1:8000/showseller3/">chek your orders</a>
+          </li>
+        </ul>
+        {% else %}
+        <ul>
+          <li id="na" class="nav-item">
+            <h3><a href="http://127.0.0.1:8000/showbuyer1/">ORDER</a></h3>
+          </li>
+        </ul>
+        {% endif %} {% endif %}
+      </div>
+    </nav>
+    <div class="Container">
+      <div class="h">
+        <h1>
+          We believe in simplicity.We think about Customres as well as
+          Shopkeepers.
+        </h1>
+        <div class="abcd">
+          <p>Just register to our website.</p>
+          <ul>
+            <li>Make your Bussiness account</li>
+            <li>Buy anything from your local Shops.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="Container">
+      <img src="static/images/66045002.jpeg" />
+    </div>
+    <div class="moto"><h3>OUR MOTIVATORS</h3></div>
+    <div class="mot">
+
+      <img id="m1"src="static/images/India_Farming.jpeg" />
+      <p>
+        Poor farmes who don't get perfect platformti sell their crops.and the crops got wasted.
+        So other persons but the crops at vey less price from them and sell them at high price.so
+        farmes don't get the real price 
+      </p>
+    </div>
+    
+    <div>
+    <div class="mot">
+      <img id="m2"
+        src="static/images/tired-caucasian-freelancer-guy-student-260nw-1923217451.webp"
+      />
+      <p>
+        Office workers who got tired at the after their jobs.they have no ore energy to  go to shop and buy something.so they can order from their home. 
+      </p>
+    </div>
+    <div class="mot">
+      <img id="m3"
+        src="static/images/varanasi-india-february-14-2017-260nw-709063078.webp"
+      />
+      <p>Poor shopkeepers who had to sit by the road for the whole day,even in summer waiting 
+        for Customres.
+      </p>
+    </div>
+    
+  </body>
+</html>

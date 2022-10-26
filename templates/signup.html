@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <link rel="stylesheet" type="text/css" href="/form.css" >
+    <title>Document 2</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        User Name: 
+        <h1><input placeholder="search your song here" id="User_name" name="User_name"></h1>
+            <br>
+    
+        First Name: <br/>
+        <h1><input placeholder="search your song here" id="First_name" name="First_name"></h1><br/>
+        Last Name: <br/>
+        <h1><input placeholder="search your song here" id="Last_name" name="Last_name"></h1><br/>
+        Email id: <br/>
+        <h1><input placeholder="search your song here" id="Email_id" name="Email_id"><br/>
+        Password: <br/>
+        <h1><input placeholder="search your song here" id="Password" name="Password"><br/>
+        <br>
+        <p>yout current location..or set by yourself</p>
+        country:
+        <input   id="country" name="country" value=""/>
+        <br>
+        state:
+        <input   id="state" name="state" value=""/>
+        <br>
+        city:
+        <input   id="city" name="city" value=""/>
+        <br>
+        <br>
+        As a : 
+        <select name="profession" id="profession">
+            <option >Seller</option>
+            <option >Buyer</option>
+        </select>
+            <br>
+        <input type="submit" value="Post"/>
+    </form>
+</body>
+</html>
+
+
+
+
+
+{% endblock%}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+<!--<form action="" method="POST">
+    {% csrf_token %}
+    Object : 
+    <h1><input placeholder="Write your object here..that you wanna buy" id="obj4" name="obj4"></h1>
+    <input type="submit" value="Post" />
+</form>-->
+
+<h1>Your orders</h1>
+{%for obj in objeclist70%}
+<form action="" method="POST">
+  {% csrf_token %} from:{{obj.buye}} order:{{order}} payment:{{obj.p}}
+  <input type="hidden" name="d" id="d" value="done" />
+  <input type="hidden" name="d1" ida="d1" value="{{obj.idd}}" />
+  <input type="submit" value="Post" />
+</form>
+<br />
+
+{%endfor%}
+
+<!--<a href="http://127.0.0.1:8000/marks/">
+        <h1>Check your mark</h1>
+    </a>-->
+
+{% endblock%}

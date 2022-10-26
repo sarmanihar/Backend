@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    Object : 
+    <h1><input placeholder="Write your object here..that you wanna buy" id="obj4" name="obj4"></h1>
+    <input type="submit" value="Post" />
+</form>
+<h1>Sellers in your nearby area...<h1>
+
+
+
+{%for obj in object_list3%}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{obj.user}}:
+    Price:{{obj.price}}
+    Discount:{{obj.off}}
+    Amount available:{{obj.amount}}
+
+
+    <select name="p"id="p" >
+        <option >cash on delivery</option>
+        <option >upi</option>
+    </select>
+
+    
+    <input type="hidden" value="{{order}}" id="ord" name="ord">
+    <input type="hidden" value={{buyer}}  id="sell" name="sell">
+    <input type="submit" value="Post" />
+</form>    
+    <br>
+
+{%endfor%}
+
+
+    
+</html>
+{% endblock%}

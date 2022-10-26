@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    User Name: 
+    <h1><input placeholder="search your song here" id="User_name" name="User_name"></h1>
+        <br>
+
+    First Name: <br/>
+    <h1><input placeholder="search your song here" id="First_name" name="First_name"></h1><br/>
+    Last Name: <br/>
+    <h1><input placeholder="search your song here" id="Last_name" name="Last_name"></h1><br/>
+    Email id: <br/>
+    <h1><input placeholder="search your song here" id="Email_id" name="Email_id"><br/>
+    Password: <br/>
+    <h1><input placeholder="search your song here" id="Password" name="Password"><br/>
+    <br>
+    <p>yout current location..or set by yourself</p>
+    country:
+    <input   id="country" name="country" value=""/>
+    <br>
+    state:
+    <input   id="state" name="state" value=""/>
+    <br>
+    city:
+    <input   id="city" name="city" value=""/>
+    <br>
+    <br>
+    As a : 
+    <select name="profession" id="profession">
+        <option >Seller</option>
+        <option >Buyer</option>
+    </select>
+        <br>
+    <input type="submit" value="Post"/>
+</form>
+
+
+<script>
+
+    var inputF1 = document.getElementById("country");
+    var inputF2 = document.getElementById("state");
+    var inputF3 = document.getElementById("city");
+function gfg_Run() {
+    inputF1.value = "textValue";
+    inputF2.value = "textValue";
+    inputF3.value = "textValue";
+}
+        async function fetchText(){
+            let url ='https://ipinfo.io/json?token=922c5fb82d39ef'
+        let response=await fetch(url)
+        let data=await response.json()
+        console.log(data)
+        console.log(data.country)
+        inputF1.value = data.country;
+        inputF2.value = data.region;
+        inputF3.value = data.city;
+        
+        }
+        fetchText()
+    </script>
+{% endblock%}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    User Name: 
+    <h1><input placeholder="search your song here" id="User_name1" name="User_name1"></h1>
+        <br>
+    Password: <br/>
+    <h1><input placeholder="search your song here" id="Password1" name="Password1"><br/>
+
+
+    <br>
+    
+    <br>
+    <input  type="submit" value="Post" />
+</form>
+
+
+
+
+
+
+
+
+{% endblock%}

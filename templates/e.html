@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/css/home2.css" />
+  </head>
+
+  <body>
+    <div class="fr">
+      <form class="formm" action="" method="POST">
+        {% csrf_token %}
+        <label><h3>Write whatever objects you are gonna sell :</h3></label>
+        <input id="obj" name="obj" />
+
+        <input type="hidden" name="user" id="user" value="{{object_list1}}" />
+        <input
+          type="hidden"
+          id="country1"
+          name="country1"
+          value="{{object_list3.country}}"
+        />
+        <input
+          type="hidden"
+          id="state1"
+          name="state1"
+          value="{{object_list3.state}}"
+        />
+        <input
+          type="hidden"
+          id="city1"
+          name="city1"
+          value="{{object_list3.city}}"
+        />
+        <input type="submit" value="Post" />
+      </form>
+    </div>
+    {%for obj1 in object_list2%}
+    <p>{{obj1.obj}}</p>
+    <p>Updted on {{obj1.date}}</p>
+    <br />
+    {%endfor%}
+  </body>
+</html>

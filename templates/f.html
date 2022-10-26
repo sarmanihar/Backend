@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--{%for obj1 in object_list3%}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{obj1.obj}} :
+    <input type="text" name="amount" id="amount" value=" {{obj1.amount}}"/>
+    <input type="submit" value="Post" />
+<br>
+</form>
+{%endfor%}-->
+<form action="" method="POST">
+    {% csrf_token %}
+{%for obj1 in object_list3%}
+<input type="hidden" name="objectn" id="objectn" value=" {{obj1.obj}}"></input>
+{{obj1.obj}} :
+amount:
+<input type="text" name="amount" id="amount" value=" {{obj1.amount}}"/>
+
+Price:
+<h1><input placeholder="Write your object here.." id="price" name="price"></h1>
+Discount:
+<h1><input placeholder="Write your object here.." id="off" name="off"></h1>
+<input type="submit" value="Post" />
+<br>
+<br>
+{%endfor%}
+<!--<input type="submit" value="Post" />-->
+</form>
+{% endblock%}
+<!--
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>get user's location</h2>
+    <script>
+        async function fetchText(){
+            let url ='https://ipinfo.io/json?token=922c5fb82d39ef'
+        let response=await fetch(url)
+        let data=await response.json()
+        console.log(data)
+        console.log(data.country)
+        }
+        fetchText()
+    </script>
+</body>
+
+</html>
+-->
